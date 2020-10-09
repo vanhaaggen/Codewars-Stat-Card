@@ -1,4 +1,4 @@
-const http = require('http')
+const https = require('https')
 const path = require('path')
 const express = require('express')
 const getUserData = require('./logic/getUserData')
@@ -25,6 +25,6 @@ app.use(function (req, res) {
 })
 
 
-http.createServer(app).listen(8080, () => {
+https.createServer(app).listen(8080, () => {
     console.log(`Server up and running on port 8080`)
 })
