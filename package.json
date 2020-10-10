@@ -6,7 +6,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "npx nodemon app",
+    "test": "npx mocha logic/*.spec.js --timeout: 100000",
+    "test-debug": "npx mocha debug logic/*.spec.js",
+    "test-inspect": "npx mocha --inspect-brk logic/*.spec.js --timeout: 100000",
+    "test:coverage": "nyc --reporter=html --reporter=text mocha logic/**/**/*.spec.js --runInBand"
   },
   "author": "Christian Haag",
   "license": "MIT",

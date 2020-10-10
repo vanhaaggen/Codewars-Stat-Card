@@ -2,7 +2,7 @@ const fetch = require('cross-fetch')
 const URL = 'https://www.codewars.com/api/v1/users/'
 
 module.exports = function (username) {
-
+    if (!username) throw new Error('empty username')
     return (async () => {
         const response = await fetch(`${URL}${username}`)
 
