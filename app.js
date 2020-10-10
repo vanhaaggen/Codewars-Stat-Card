@@ -1,12 +1,14 @@
-const http = require('https')
+const http = require('http')
 const path = require('path')
 const express = require('express')
-const getUserData = require('./logic/getUserData')
 const routes = require('./routes')
 const cors = require('cors')
-const logger = require('morgan')
-const bodyParser = require('body-parser')
 const hbs = require('express-handlebars')
+const { handleError } = require('./helpers/error')
+const { fail } = require('assert')
+//const getUserData = require('./logic/getUserData')
+//const logger = require('morgan')
+//const bodyParser = require('body-parser')
 
 const app = express()
 
@@ -19,10 +21,17 @@ app.use('/public', express.static("public"))//search for the style.css file in /
 app.use(cors())
 app.use('/', routes)
 
-
-app.use(function (req, res) {
-    res.status(404).render("404")
+app.all('*', (req, res, next) => {
+    res.status(404).json({
+        status: fail,
+        message: `Can't find ${req.originalUrl}`
+    })
 })
+
+app.use((err, req, res, next) => {
+    handleError(err, res)
+})
+
 
 
 http.createServer(app).listen(8080, () => {

@@ -1,29 +1,30 @@
 const { Router } = require("express")
 const url = require('url')
+const { ErrorHandler } = require("../helpers/error")
 const getUserData = require('../logic/getUserData')
 
 const router = Router()
-const userData = []
+const data = []
 
 
-router.get('/', async function (req, res) {
+router.get('/', async function (req, res, next) {
     let urlQueries = req.query
-
+    console.log(urlQueries)
     try {
-        const response = await getUserData(urlQueries.username)
-        response && userData.push(response)
-
+        if (!req.query.username) throw new ErrorHandler(404, "You need to specify username")
+        const data = await getUserData(urlQueries.username)
+        console.log(data)
         res.render('index', {
-            condition: userData.length !== 0 ? true : false,
+            condition: data.length !== 0 ? true : false,
             darkMode: urlQueries.darkMode,
             title: 'Hello, Handlebars',
-            username: userData[0].name,
-            honor: userData[0].honor,
-            kyu: userData[0].ranks.overall.name
+            username: data.name,
+            honor: data.honor,
+            kyu: data.ranks.overall.name
         })
-
-    } catch ({ message }) {
-        res.status(400).json({ error: message })
+        next()
+    } catch (error) {
+        next(error)
     }
 
 })
