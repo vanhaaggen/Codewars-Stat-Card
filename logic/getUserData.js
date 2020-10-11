@@ -2,7 +2,8 @@ const fetch = require('cross-fetch')
 const URL = 'https://www.codewars.com/api/v1/users/'
 
 module.exports = function (username) {
-    if (!username) throw new Error('empty username')
+    if (!username) throw new Error('username parameter is missing')
+
     return (async () => {
         const response = await fetch(`${URL}${username}`)
 
