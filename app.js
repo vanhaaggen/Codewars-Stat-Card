@@ -5,7 +5,7 @@ const routes = require('./routes')
 const cors = require('cors')
 const hbs = require('express-handlebars')
 const { handleError } = require('./helpers/error')
-const { fail } = require('assert')
+
 //const getUserData = require('./logic/getUserData')
 //const logger = require('morgan')
 //const bodyParser = require('body-parser')
@@ -21,9 +21,8 @@ app.use('/public', express.static("public"))//search for the style.css file in /
 app.use(cors())
 app.use('/', routes)
 
-app.all('*', (req, res, next) => {
+app.all('*', (req, res) => {
     res.status(404).json({
-        status: fail,
         message: `Can't find ${req.originalUrl}`
     })
 })
