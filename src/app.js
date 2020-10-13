@@ -24,7 +24,7 @@ const app = express()
 /**
  * Express configuration.
  */
-app.set('views', path.resolve(__dirname, 'views'))//Tells express where the view folder is
+app.set('views', path.resolve(__dirname, 'views',))//Tells express where the view folder is
 app.engine('handlebars', exphbs({ extname: '.handlebars', defaultLayout: 'main' }))//Associates .hbs files with the Handlebars engine and defines layout file and its folder
 app.set('view engine', 'handlebars')//Tells express that you're going to use Handlebars templating engine
 app.use(express.static(__dirname + '/public'))//search for the style.css file in /public
