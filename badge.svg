@@ -1,4 +1,21 @@
-<path style="fill:{{#if darkMode}}#B92F21{{else}}#0077EE{{/if}};" d="M384.496,5h-24.993c-1.381,0.004-2.5,1.122-2.503,2.503v24.994c0.003,1.381,1.122,2.499,2.503,2.503
+
+	<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="400px" height="40px" viewBox="0 0 400 40" style="enable-background:new 0 0 400 40;"
+    xml:space="preserve">
+    
+    <path style="fill:{{#if darkMode}}#303133{{else}}#AAAAAA{{/if}};" stroke="#020202" stroke-miterlimit="10"
+    d="M11.547,40L0,20L11.547,0h360.467v40H11.547z" />
+
+	<text transform="matrix(1 0 0 1 76.9998 27)"
+		style="fill:#E8E8E8; font-family:'Arial'; font-size:20;">{{username}}</text>
+
+	<path style="fill:{{#if darkMode}}#1D1D1F{{else}}#9F9F9F{{/if}};" stroke="#020202" stroke-miterlimit="10"
+    d="M294.547,40L283,20l11.547-20h93.905L400,20l-11.548,20H294.547z" />
+
+	<text transform="matrix(1 0 0 1 310.3206 25)"
+		style="fill:{{#if darkMode}}#AAAAAA{{else}}#1D1D1F{{/if}}; font-family:'Arial'; font-size:14;">{{honor}}</text>
+
+	<path style="fill:{{#if darkMode}}#B92F21{{else}}#0077EE{{/if}};" d="M384.496,5h-24.993c-1.381,0.004-2.5,1.122-2.503,2.503v24.994c0.003,1.381,1.122,2.499,2.503,2.503
 	h24.993c1.381-0.004,2.5-1.122,2.504-2.503V7.503C386.996,6.122,385.877,5.004,384.496,5z M385.065,22.828
 	c-0.123,0.122-0.24,0.25-0.408,0.423c0.24,1.448-0.707,2.308-1.747,3.11c-1.081,0.838-2.168,1.668-3.263,2.49
 	c-0.245,0.184-0.544,0.293-0.82,0.438c-0.683,1.886-0.94,2.118-2.388,2.085c-0.346,0.931-1.034,1.301-2.034,1.039
@@ -44,3 +61,21 @@
 	c1.23,0.453,2.217,1.279,2.987,2.302c0.362,0.482,0.459,1.164,0.733,1.915c-0.303,0.446-0.443,1.092,0.117,1.747
 	c-0.739,0.6-1.123,1.303-1.004,2.119l-1.8,1.729l-1.567,0.697c-0.495,0.094-0.979,0.23-1.47,0.264
 	c-0.473,0.034-1.046,0.12-1.409-0.097C370.213,30.468,369.245,30.739,368.889,29.717L368.889,29.717z" />
+
+	<path style="fill:{{#if darkMode}}#141414{{else}}#939292{{/if}};"
+    d="M62.237,31.45L68.61,20L62.237,8.55H16.41L10.037,20l6.373,11.45H62.237z" />
+
+<text transform="matrix(1 0 0 1 22.2688 24.7705)"
+    style="fill:#ECB613; font-family:'Arial'; font-size:14;">{{kyu}}</text>
+
+<path style="fill:#ECB613;" d="M15.083,34L7,20l8.083-14H63.58l8.083,14L63.58,34H15.083z M61.697,30.768L67.919,20L61.697,9.233
+	H16.95L10.728,20l6.223,10.768H61.697z" />
+
+	{{else}}
+
+	<text transform="matrix(1 0 0 1 310.3206 25)"
+		style="fill:{{#if darkMode}}#AAAAAA{{else}}#1D1D1F{{/if}}; font-family:'Arial'; font-size:14;">no data</text>
+
+	{{/if}}
+
+<svg>

@@ -1,26 +1,19 @@
-const getUserData = require('../logic/getUserData')
-const template = require('../views/layouts/main')
+const getUserData = require('../fetcher/getUserData')
+const renderBadge = require('../views/renderBadge')
+
 
 exports.badge = async (req, res, next) => {
     const queries = req.query
+    res.setHeader("Content-Type", "image/svg+xml")
     if (Object.keys(queries).length === 0) {
-        res.render('home', {
-            condition: false
-        })
+        res.send('Not founddddd')
 
     } else {
 
         try {
             const data = await getUserData(queries.username)
-            console.log(data)
-            res.render('home', {
-                condition: true,
-                darkMode: queries.darkMode == "true",
-                title: 'Hello, Handlebars',
-                username: data.name,
-                honor: data.honor,
-                kyu: data.ranks.overall.name
-            })
+            console.log(queries)
+            res.send(renderBadge(data, queries))
 
         } catch (error) {
             next(error)
