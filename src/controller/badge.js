@@ -7,7 +7,9 @@ exports.badge = async (req, res, next) => {
         res.render('partial-badge', {
             condition: false
         })
+
     } else {
+
         try {
             const data = await getUserData(queries.username)
             console.log(data)
