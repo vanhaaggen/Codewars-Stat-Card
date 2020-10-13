@@ -1,0 +1,25 @@
+<h2>{{ title }}</h2>
+<div class="name">
+	{{#if condition}}
+	<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+		y="0px" width="400px" height="40px" viewBox="0 0 400 40" style="enable-background:new 0 0 400 40;"
+		xml:space="preserve">
+
+		{{>largeBackground}}
+
+		<text transform="matrix(1 0 0 1 76.9998 27)"
+			style="fill:#E8E8E8; font-family:'Arial'; font-size:20;">{{username}}</text>
+
+		{{>smallBackground}}
+
+		<text transform="matrix(1 0 0 1 310.3206 25)"
+			style="fill:{{#if darkMode}}#AAAAAA{{else}}#1D1D1F{{/if}}; font-family:'Arial'; font-size:14;">{{honor}}</text>
+
+		{{>logo}}
+		{{>kyuLable}}
+	</svg>
+
+	{{else}}
+	<p>No data</p>
+	{{/if}}
+</div>

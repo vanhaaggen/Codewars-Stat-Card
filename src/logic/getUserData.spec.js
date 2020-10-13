@@ -3,7 +3,6 @@ const { expect } = chai
 const fetch = require('cross-fetch')
 const chaiFetch = require('chai-fetch')
 const getUserData = require('./getUserData')
-const { ErrorHandler } = require('../helpers/error')
 chai.use(chaiFetch)
 
 
