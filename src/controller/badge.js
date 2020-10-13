@@ -4,7 +4,7 @@ const template = require('../views/layouts/main')
 exports.badge = async (req, res, next) => {
     const queries = req.query
     if (Object.keys(queries).length === 0) {
-        res.render('partial-badge', {
+        res.render('home', {
             condition: false
         })
 
