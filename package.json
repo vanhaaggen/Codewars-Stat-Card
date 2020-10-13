@@ -5,7 +5,7 @@
   "description": "codewars user stats as beautifull target for github READMEs",
   "main": "app.js",
   "scripts": {
-    "build": "rm -rf dist && webpack ./webpack.config.js -p",
+    "__build__": "rm -rf dist && webpack ./webpack.config.js -p",
     "start": "node ./src/app.js",
     "watch": "npx nodemon ./src/app",
     "test": "npx mocha logic/*.spec.js --timeout: 100000",
