@@ -7,10 +7,12 @@ WiP
 
  ### Default mode 
  `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]`
+ 
  ![](https://afternoon-wildwood-73334.herokuapp.com/?username=vanhaaggen)
  
  ### Bright mode
  `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]&bright_mode=[true]`
+ 
  ![](https://afternoon-wildwood-73334.herokuapp.com/?username=vanhaaggen&bright_mode=true)
  
 ## things to do:
