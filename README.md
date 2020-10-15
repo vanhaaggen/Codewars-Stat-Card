@@ -1,9 +1,8 @@
-# Codewars Stat Badge/Card 
+# Codewars Stat Badge/Card (WiP) 
 This is not the original Codewars Badge, just a redesign.
 
 ⚠ The app is deployed on Heroku and it has a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform. 
 
-WiP
 
  ### Default mode 
  `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]`
