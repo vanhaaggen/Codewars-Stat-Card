@@ -10,7 +10,7 @@ const {
     env: { PORT },
 } = process
 
-const badgeController = require('./controller/badge')
+const badgeController = require('./controller')
 
 const app = express()
 app.use(cors())
