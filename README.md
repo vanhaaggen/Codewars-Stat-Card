@@ -1,7 +1,7 @@
-# Codewars Stat Badge/Card
+# Codewars Stat Badge/Card 
 This is not the original Codewars Badge, just a redesign.
 
-⚠ The app is stored on Heroku and I have a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform.
+⚠ The app is deployed on Heroku and it has a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform. 
 
 WiP
 
@@ -24,4 +24,5 @@ WiP
 
 - Create codewars stat Card with more user info.
 
+- Make a button to automate the deployement on diferent platforms.
 ...
