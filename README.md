@@ -15,13 +15,13 @@ This is not the original Codewars Badge, just a redesign.
  ![](https://afternoon-wildwood-73334.herokuapp.com/?username=vanhaaggen&bright_mode=true)
  
 ## things to do:
-- Choose to display username. Default is both name and username.
+- [ ] Choose to display username. Default is both name and username.
 
-- If no user string is returned, display username in big.
+- [x] If name return null, display username in big.
 
-- Make color design fully customizable.
+- [ ] Make color design fully customizable.
 
-- Create codewars stat Card with more user info.
+- [ ] Create codewars stat Card with more user info.
 
-- Make a button to automate the deployement on diferent platforms.
+- [ ] Make a button to automate the deployement on diferent platforms.
 ...
