@@ -21,9 +21,9 @@ exports.badge = async (req, res, next) => {
     } else {
 
         try {
-            const data = await getUserData(queries.username)//---> Commented out for developement
+            //const data = await getUserData(queries.username)//---> Commented out for developement
 
-            res.send(renderBadge(data, queries))
+            res.send(renderBadge(DEV, queries))
 
         } catch (error) {
             next(error)
