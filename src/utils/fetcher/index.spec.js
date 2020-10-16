@@ -2,7 +2,7 @@ const chai = require('chai')
 const { expect } = chai
 const fetch = require('cross-fetch')
 const chaiFetch = require('chai-fetch')
-const getUserData = require('./getUserData')
+const getUserData = require('./index')
 chai.use(chaiFetch)
 
 

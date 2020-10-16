@@ -1,5 +1,5 @@
 const { logoBig, logoSmall } = require('../assets/svg/cw_logo')
-const googleFont = require('../utils/googleFont')
+const googleFont = require('../assets/googleFont')
 const getKyuColor = require('../utils/getKyuColor')
 
 module.exports = (data, options) => {
@@ -66,13 +66,13 @@ module.exports = (data, options) => {
         `
     }
 
-    const kyuPoligonRender = (x, y, fill, logo, ...arg) => {
-        const isStroke = arg.length !== 0 ? `stroke="${arg[0]}" stroke-miterlimit="10"` : ''
+    const kyuPoligonRender = (x, y, fill, logo, strokeColor) => {
+        const bgColoring = fill === 'blue' ? '#C1C1C1' : '#141414'
 
         return `
         <g id="header" transform="matrix(1 0 0 1 ${x} ${y})">
        
-        <polygon fill="${fill}" ${isStroke} points="83.891,1.001 77.668,-9.777 66.167,-9.777 65.223,-9.777 
+        <polygon fill="${bgColoring}" stroke="${strokeColor}" stroke-miterlimit="10" points="83.891,1.001 77.668,-9.777 66.167,-9.777 65.223,-9.777 
             33.501,-9.777 32.917,-9.777 21.056,-9.777 14.833,1.001 21.056,11.778 32.917,11.778 33.501,11.778 66.167,11.778 66.167,11.777 
             77.668,11.777 	"/>
        
@@ -83,7 +83,8 @@ module.exports = (data, options) => {
     }
 
     const render = () => {
-        const kyu_color = getKyuColor(ranks.overall.color)
+        const rankColor = ranks.overall.color
+        const kyu_color = getKyuColor(rankColor)
 
         return `
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" 
@@ -102,12 +103,16 @@ module.exports = (data, options) => {
         ${foregroundRender()}
         ${logoRender(color.logo, logoBig)}
        
-        ${kyuPoligonRender(0, 19.20, '#141414', logoRender(kyu_color, logoSmall), kyu_color)}
-   
+        ${kyuPoligonRender(0, 19.20, rankColor, logoRender(kyu_color, logoSmall), kyu_color)}
+        
+        ${name !== null ? [
+                textRender(100.5002, 21.00, color.text, 20, name),
+                textRender(100.5002, 33.80, '#918A8A', 12, 'alias', 'Lato', 'italic'),
+                textRender(128.5002, 33.80, color.text, 13, username, 'Lato', 'italic')
+            ] : textRender(100.5002, 26.25, color.text, 20, username)}
+
         ${textRender(40.7854, 25.25, kyu_color, 14, ranks.overall.name)}
-        ${textRender(100.5002, 21.25, color.text, 20, name)}
-        ${textRender(100.5002, 33.25, '#918A8A', 13, 'alias', 'Lato', 'italic')}
-        ${textRender(128.5002, 33.25, color.text, 13, username, 'Lato', 'italic')}
+        
         ${textRender(310.3206, 25, color.text, 13, honor)}
 
         

@@ -1,8 +1,8 @@
-const getUserData = require('../fetcher/getUserData')
+const fetcher = require('../utils/fetcher')
 const renderBadge = require('../views/renderBadge')
 const DEV = {
     username: 'vanhaaggen',
-    name: 'Christian Haag',
+    name: 'Christian',
     honor: 135,
     clan: 'SelfClan',
     leaderboardPosition: 231907,
@@ -21,7 +21,7 @@ exports.badge = async (req, res, next) => {
     } else {
 
         try {
-            //const data = await getUserData(queries.username)//---> Commented out for developement
+            //const data = await fetcher(queries.username)//---> Commented out for developement
 
             res.send(renderBadge(DEV, queries))
 
