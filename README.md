@@ -4,15 +4,29 @@ This is not the original Codewars Badge, just a redesign.
 ⚠ The app is deployed on Heroku and it has a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform. 
 
 
- ### Default mode 
- `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]`
+## Options
+
+- ### Default mode 
+   `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]`
  
- ![](https://afternoon-wildwood-73334.herokuapp.com/?username=vanhaaggen)
+    ![](./svg/defaultBadge.svg)
  
- ### Bright mode
- `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]&bright_mode=[true]`
+- ### bright_mode
+   `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]&bright_mode`
  
- ![](https://afternoon-wildwood-73334.herokuapp.com/?username=vanhaaggen&bright_mode=true)
+    ![](./svg/badgeBrightMode.svg)
+
+- ### name_only
+  `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]&name_only`
+
+    ![](./svg/badgeNameOnly.svg)
+
+- ### alias_only (combined with bright_mode)
+  `https://afternoon-wildwood-73334.herokuapp.com/?username=[your username]&alias_only&bright_mode`
+
+    ![](./svg/badgeCombinedOptions.svg)
+    
+---
  
 ## things to do:
 - [x] Choose to display username. Default is both name and username.
