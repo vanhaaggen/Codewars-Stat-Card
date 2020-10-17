@@ -1,5 +1,5 @@
 const fetcher = require('../utils/fetcher')
-const renderBadge = require('../views/renderBadge')
+const renderSVG = require('./renderSVG')
 const DEV = {
     username: 'vanhaaggen',
     name: 'Christian Haag',
@@ -24,8 +24,7 @@ exports.badge = async (req, res, next) => {
 
         try {
             //const data = await fetcher(queries.username)//---> Commented out for developement
-
-            res.send(renderBadge(DEV, queries))
+            res.send(renderSVG(DEV, queries))
 
         } catch (error) {
             next(error)

@@ -1,18 +1,31 @@
-const { logoBig, logoSmall } = require('../assets/svg/cw_logo')
+const {
+    logoBig,
+    logoSmall
+} = require('../assets/svg/cw_logo')
+
 const googleFont = require('../assets/googleFont')
-const { getKyuColor, findInObj } = require('../utils')
+
+const {
+    getKyuColor,
+    findInObj
+} = require('../utils')
+
+const {
+    textRender,
+    logoRender,
+    kyuPoligonRender
+} = require('./components')
 
 module.exports = (data, options) => {
     const {
         username,
         name,
         honor,
-        clan,
-        skills,
         ranks,
     } = data
 
     const isBrightMode = findInObj(options, 'bright_mode')
+
     const color = {
         bg: isBrightMode ? '#f5f5f5' : '#303133',
         fg: isBrightMode ? '#b3b3b3' : '#1D1D1F',
@@ -39,41 +52,6 @@ module.exports = (data, options) => {
         stroke="${color.stroke}" 
         stroke-miterlimit="10"
     d="M294.547,40L283,20l11.547-20h93.905L400,20l-11.548,20H294.547z" />
-        `
-    }
-
-    const textRender = (x, y, fontColor, fontSize, data, fontFamily, fontStyle) => {
-        const fntFamily = fontFamily || 'Arial'
-        const fntStyle = fontStyle || 'normal'
-        return `
-        <text transform="matrix(1 0 0 1 ${x} ${y})"
-        fill="${fontColor}"
-        font-family="${fntFamily}"
-        font-style="${fntStyle}"
-        font-size="${fontSize}">${data}</text>
-        `
-    }
-
-    const logoRender = (colorArg, pathArg) => {
-        return `
-        <path 
-        fill="${colorArg}" 
-        d="${pathArg}" />
-        `
-    }
-
-    const kyuPoligonRender = (x, y, fill, logo, strokeColor) => {
-        const bgColoring = fill === 'blue' ? '#C1C1C1' : '#141414'
-
-        return `
-        <g id="header" transform="matrix(1 0 0 1 ${x} ${y})">
-       
-        <polygon fill="${bgColoring}" stroke="${strokeColor}" stroke-miterlimit="10" points="83.891,1.001 77.668,-9.777 66.167,-9.777 65.223,-9.777 
-            33.501,-9.777 32.917,-9.777 21.056,-9.777 14.833,1.001 21.056,11.778 32.917,11.778 33.501,11.778 66.167,11.778 66.167,11.777 
-            77.668,11.777 	"/>
-       
-            ${logo}
-        </g>
         `
     }
 
@@ -121,7 +99,7 @@ module.exports = (data, options) => {
 
         ${logoRender(color.logo, logoBig)}
        
-        ${kyuPoligonRender(0, 19.20, rankColor, logoRender(kyuColor, logoSmall), kyuColor)}
+        ${kyuPoligonRender(0, 19.20, rankColor, kyuColor, logoRender(kyuColor, logoSmall))}
         
         ${displayName()}
 
