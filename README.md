@@ -15,7 +15,7 @@ This is not the original Codewars Badge, just a redesign.
  ![](https://afternoon-wildwood-73334.herokuapp.com/?username=vanhaaggen&bright_mode=true)
  
 ## things to do:
-- [ ] Choose to display username. Default is both name and username.
+- [x] Choose to display username. Default is both name and username.
 
 - [x] If name return null, display username in big.
 
