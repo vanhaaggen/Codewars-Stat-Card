@@ -2,7 +2,7 @@ const fetcher = require('../utils/fetcher')
 const renderBadge = require('../views/renderBadge')
 const DEV = {
     username: 'vanhaaggen',
-    name: 'Christian',
+    name: 'Christian Haag',
     honor: 135,
     clan: 'SelfClan',
     leaderboardPosition: 231907,
@@ -15,6 +15,8 @@ const DEV = {
 
 exports.badge = async (req, res, next) => {
     const queries = req.query
+    console.log(queries)
+
     res.setHeader("Content-Type", "image/svg+xml")
     if (Object.keys(queries).length === 0) {
         res.send('Not founddddd')
