@@ -13,7 +13,8 @@ const {
 const {
     textRender,
     logoRender,
-    kyuPoligonRender
+    kyuLevelRender,
+    nameRender
 } = require('./components')
 
 module.exports = (data, options) => {
@@ -55,28 +56,6 @@ module.exports = (data, options) => {
         `
     }
 
-    const displayName = () => {
-        const hasNameOnly = findInObj(options, 'name_only')
-        const hasAliasOnly = findInObj(options, 'alias_only')
-
-        if (name !== null && !hasNameOnly && !hasAliasOnly || name !== null && hasNameOnly && hasAliasOnly) {
-            return [
-                textRender(100.5002, 21.00, color.text, 20, name),
-                textRender(100.5002, 33.80, '#918A8A', 12, 'alias', 'Lato', 'italic'),
-                textRender(128.5002, 33.80, color.text, 13, username, 'Lato', 'italic')
-            ]
-
-        } else if (name !== null && hasNameOnly) {
-            return textRender(100.5002, 26.25, color.text, 20, name)
-
-        } else if (name !== null && hasAliasOnly) {
-            return textRender(100.5002, 26.25, color.text, 20, username)
-
-        } else {
-            return textRender(100.5002, 26.25, color.text, 20, username)
-        }
-    }
-
     const render = () => {
         const rankColor = ranks.overall.color
         const kyuColor = getKyuColor(rankColor)
@@ -89,26 +68,21 @@ module.exports = (data, options) => {
         height="40px" 
         viewBox="0 0 400 40" 
         style="enable-background:new 0 0 400 40;"
-        xml:space="preserve">
-        
+        xml:space="preserve"> 
        ${googleFont()}
 
         ${backgroundRender()}
 
         ${foregroundRender()}
 
-        ${logoRender(color.logo, logoBig)}
+        ${logoRender(0, 0, color.logo, logoBig)}
        
-        ${kyuPoligonRender(0, 19.20, rankColor, kyuColor, logoRender(kyuColor, logoSmall))}
+        ${kyuLevelRender(0, 19.20, rankColor, kyuColor, logoRender(0, 0, kyuColor, logoSmall), ranks.overall.name)}
         
-        ${displayName()}
-
-        ${textRender(40.7854, 25.25, kyuColor, 14, ranks.overall.name)}
+        ${nameRender(100.5002, 20.5002, name, username, color.text, options)}
         
         ${textRender(310.3206, 25, color.text, 13, honor)}
-
-        
-     </svg>
+        </svg>
         `
     }
 

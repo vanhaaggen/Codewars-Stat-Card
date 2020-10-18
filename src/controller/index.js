@@ -8,7 +8,7 @@ const DEV = {
     leaderboardPosition: 231907,
     skills: ['javascript'],
     ranks: {
-        overall: { rank: -6, name: '6 kyu', color: 'yellow', score: 109 },
+        overall: { rank: -6, name: '6 kyu', color: 'yellow', score: 130 },
     }
 }
 
