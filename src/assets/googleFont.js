@@ -1,6 +1,6 @@
 module.exports = () => {
   return `
-    <defs>
+    
     <style type="text/css">
     @font-face {
       font-family: 'Lato';
@@ -30,6 +30,6 @@ module.exports = () => {
 
 
   </style> 
-    </defs>
+    
     `
 }
