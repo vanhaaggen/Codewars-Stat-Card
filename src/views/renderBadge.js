@@ -67,10 +67,11 @@ module.exports = (data, options) => {
         width="400px" 
         height="40px" 
         viewBox="0 0 400 40" 
-        style="enable-background:new 0 0 400 40;"
         xml:space="preserve"> 
-       ${googleFont()}
-
+      
+      ${googleFont()}
+     
+  
         ${backgroundRender()}
 
         ${foregroundRender()}
