@@ -5,7 +5,6 @@ const {
     logo
 } = require('../assets/svg/cw_logo')
 
-const googleFont = require('../assets/googleFont')
 
 const {
     getKyuColor,
@@ -109,8 +108,7 @@ module.exports = (data, options) => {
             viewBox="0 -30 400 180" 
             enable-background="new 0 -30 400 180" 
             xml:space="preserve">
-            ${googleFont()}
-
+         
             ${background(color.bg)}
             ${foreground(color.fg)}
             ${kyuLevelRender(0, -1, rankColor, kyuColor, logoRender(0, 0, kyuColor, logoSmall), ranks.overall.name)}

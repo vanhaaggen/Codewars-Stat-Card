@@ -3,8 +3,6 @@ const {
     logoSmall
 } = require('../assets/svg/cw_logo')
 
-const googleFont = require('../assets/googleFont')
-
 const {
     getKyuColor,
     findInObj
@@ -69,9 +67,6 @@ module.exports = (data, options) => {
         viewBox="0 0 400 40" 
         xml:space="preserve"> 
       
-      ${googleFont()}
-     
-  
         ${backgroundRender()}
 
         ${foregroundRender()}

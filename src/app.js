@@ -14,8 +14,8 @@ const badgeController = require('./controller')
 
 const app = express()
 app.use(cors())
-
-app.get('/', badgeController.badge)
+app.use('/public', express.static('public'))
+app.get('/api', badgeController.badge)
 
 app.use(errorHandler())
 

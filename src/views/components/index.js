@@ -1,13 +1,12 @@
 const { findInObj } = require('../../utils/index')
 
-const textRender = (x, y, fontColor, fontSize, data, fontFamily, fontStyle) => {
-    const fntFamily = fontFamily || 'Arial'
+const textRender = (x, y, fontColor, fontSize, data, fontStyle) => {
     const fntStyle = fontStyle || 'normal'
 
     return `
         <text transform="matrix(1 0 0 1 ${x} ${y})"
         fill="${fontColor}"
-        font-family="${fntFamily}"
+        font-family="Sans-Serif"
         font-style="${fntStyle}"
         font-size="${fontSize}">${data}</text>
         `
@@ -52,8 +51,8 @@ const nameRender = (x, y, name, username, textColor, options) => {
     if (name !== null && !hasNameOnly && !hasAliasOnly || name !== null && hasNameOnly && hasAliasOnly) {
         return [
             textRender(x, y, textColor, 20, name),
-            textRender(x, (y + 12.80), '#918A8A', 12, 'alias', 'Lato', 'italic'),
-            textRender((x + 28), (y + 12.80), textColor, 13, username, 'Lato', 'italic')
+            textRender(x, (y + 12.80), '#918A8A', 12, 'alias', 'italic'),
+            textRender((x + 28), (y + 12.80), textColor, 12, username, 'italic')
         ]
 
     } else if (name !== null && hasNameOnly) {
