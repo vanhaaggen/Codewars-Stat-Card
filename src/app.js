@@ -4,18 +4,19 @@ const path = require('path')
 const express = require('express')
 const cors = require('cors')
 const errorHandler = require('errorhandler')
-
-
+const bodyParser = require('body-parser')
+const routes = require("./routes")
 const {
     env: { PORT },
 } = process
 
-const badgeController = require('./controller')
+
 
 const app = express()
+app.use(bodyParser.json())
 app.use(cors())
-app.use('/public', express.static('public'))
-app.get('/api', badgeController.badge)
+
+app.use('/api', routes)
 
 app.use(errorHandler())
 

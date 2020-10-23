@@ -1,6 +1,11 @@
 const chai = require('chai')
 const { assert } = chai
-const { getKyuColor, findInObj } = require('./index')
+const {
+    getKyuColor,
+    findInObj,
+    progressBar,
+    REQUIRED_SCORE
+} = require('./index')
 
 describe('getKyuColor()', () => {
     const tests = [
@@ -37,3 +42,10 @@ describe('findInObj()', () => {
     })
 })
 
+describe('progressBar()', () => {
+    const test = [
+        { arg: [-8, 15], expected: {} },
+        { arg: [], expected: {} }
+
+    ]
+})

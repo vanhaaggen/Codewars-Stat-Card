@@ -1,4 +1,5 @@
 const { findInObj } = require('../../utils/index')
+const { fetchIcon } = require('../../utils/fetcher')
 
 const textRender = (x, y, fontColor, fontSize, data, fontStyle) => {
     const fntStyle = fontStyle || 'normal'
@@ -8,7 +9,8 @@ const textRender = (x, y, fontColor, fontSize, data, fontStyle) => {
         fill="${fontColor}"
         font-family="Sans-Serif"
         font-style="${fntStyle}"
-        font-size="${fontSize}">${data}</text>
+        font-size="${fontSize}"
+        >${data}</text>
         `
 }
 
@@ -66,9 +68,39 @@ const nameRender = (x, y, name, username, textColor, options) => {
     }
 }
 
+const iconPLComponent = (dataObj, color1, color2) => {
+    const { languages } = dataObj
+    const language = Object.keys(languages)
+    let x = 18
+
+    let components = []
+
+    for (let i = 0; i < language.length; i++) {
+        const icon = fetchIcon(language[i])
+        let component = `
+        <g transform="matrix(1 0 0 1 ${x} 114)">
+        <path
+        fill="${color1}"
+        d="${icon.path}"
+        />
+        <g transform="matrix(1 0 0 1 28 8.5)">
+            ${textRender(0, 0, color2, 10, 'score:')}
+            ${textRender(0, 13, color2, 13, Object.values(languages)[i].score)}
+        </g>
+        </g>
+        `
+        x += 92
+        components.push(component)
+
+    }
+    return components
+
+}
+
 module.exports = {
     textRender,
     logoRender,
     kyuLevelRender,
     nameRender,
+    iconPLComponent
 }

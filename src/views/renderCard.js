@@ -6,30 +6,23 @@ const {
 } = require('../assets/svg/cw_logo')
 
 
+
 const {
     getKyuColor,
-    findInObj
+    findInObj,
+    progressBar
 } = require('../utils')
 
 const {
     textRender,
     logoRender,
     kyuLevelRender,
-    nameRender
+    nameRender,
+    iconPLComopent,
+    iconPLComponent
 } = require('./components')
 
-const REQUIRED_SCORE = {
-    kyu8: 0,
-    kyu7: 20,
-    kyu6: 76,
-    kyu5: 229,
-    kyu4: 643,
-    kyu3: 1768,
-    kyu2: 4829,
-    kyu1: 13147,
-    dan1: 35759,
-    dan2: 97225
-}
+
 
 module.exports = (data, options) => {
 
@@ -38,6 +31,7 @@ module.exports = (data, options) => {
         name,
         honor,
         ranks,
+        codeChallenges
     } = data
 
     const isBrightMode = findInObj(options, 'bright_mode')
@@ -47,6 +41,7 @@ module.exports = (data, options) => {
         fg: isBrightMode ? '#b3b3b3' : '#1D1D1F',
         stroke: isBrightMode ? '#b3b3b3' : '#020202',
         text: isBrightMode ? '#303133' : '#E8E8E8',
+        secondaryTxt: '#AAAAAA',
         logo: isBrightMode ? '#f5f5f5' : '#B92F21'
     }
 
@@ -68,27 +63,50 @@ module.exports = (data, options) => {
     }
 
     const progressBarRender = (currentKyu, userScore) => {
-        const X2_LIMIT = 400
-        const kyuAbs = Math.abs(currentKyu)
-        const nextKyuRank = REQUIRED_SCORE[`kyu${kyuAbs - 1}`]
-        const currentKyuRank = REQUIRED_SCORE[`kyu${kyuAbs}`]
-        const diffToNextRank = nextKyuRank - currentKyuRank
-
-        const progress = ((userScore - currentKyuRank) * 100 / diffToNextRank).toFixed(2)
-        const result = (progress * 1) * X2_LIMIT / 100
-
+        const result = progressBar(currentKyu, userScore)
+        const barLenght = result.progressBarLenght
+        const percentage = result.progressPercentage
         return `
         <line 
         fill="#ECB613" 
         stroke="#ECB613" 
-        stroke-width="13" 
+        stroke-width="5"
+        stroke-linecap="round"
         stroke-miterlimit="10" 
         x1="0" 
         y1="39.5" 
-        x2="${result}" 
+        x2="${result.progressBarLenght}" 
         y2="39.5"
         />
-        ${textRender(20.5002, 43.5, '#AAAAAA', 13, (progress + '%'))}
+        ${textRender(20.5002, 35.5, '#AAAAAA', 13, (percentage === 'master' ? `score: ${userScore}` : `${percentage}%`))}
+        `
+    }
+
+    const challengeRender = (challengeCompleted, challengeAuthored) => {
+        const TEXT_A = 'Total completed:'
+        const TEXT_B = 'Total authored:'
+        return `
+        <g id="challenges">
+        ${textRender(17.5002, 66.5, color.secondaryTxt, 12, 'Challenges:')}
+        ${textRender(15.5002, 84.7822, color.text, 14,
+            `<tspan x="3.01" y="0">${TEXT_A}</tspan>
+            <tspan x="115.198" y="0"> ${challengeCompleted}</tspan>`
+        )}
+      
+        ${textRender(201.5002, 84.7822, color.text, 14, `
+        <tspan x="0" y="0" >${TEXT_B}</tspan>
+        <tspan x="103.257" y="0">${challengeAuthored}</tspan>
+        `)}   
+       
+    </g>
+        `
+    }
+
+    const progLangRender = (dataObj) => {
+        return `
+            ${textRender(18.5002, 105.5, color.secondaryTxt, 12, 'Top 3 languages:')}
+            ${iconPLComponent(dataObj, color.text, color.secondaryTxt)}
+     
         `
     }
 
@@ -117,6 +135,8 @@ module.exports = (data, options) => {
             ${logoRender(0, 0, color.text, honorIcon)}
             ${logoRender(0, -19.15, color.logo, logoBig)}
             ${progressBarRender(ranks.overall.rank, ranks.overall.score)}
+            ${challengeRender(codeChallenges.totalCompleted, codeChallenges.totalAuthored)}
+            ${progLangRender(ranks)}
             </svg>
         `
     }
