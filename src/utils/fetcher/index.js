@@ -1,5 +1,5 @@
 const fetch = require('cross-fetch')
-const simpleIcons = require('simple-icons')
+
 
 function fetchUser(username) {
     const URL = 'https://www.codewars.com/api/v1/users/'
@@ -14,18 +14,13 @@ function fetchUser(username) {
             throw Error(error)
         }
         const data = await response.json()
+        console.log(data)
         return data
     })()
 
 }
 
-function fetchIcon(iconName) {
-    if (!iconName) throw new Error('no logo name queried')
-    const icon = simpleIcons.get(iconName)
-    return icon
-}
 
 module.exports = {
     fetchUser,
-    fetchIcon
 }

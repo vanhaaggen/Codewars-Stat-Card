@@ -18,7 +18,6 @@ const {
     logoRender,
     kyuLevelRender,
     nameRender,
-    iconPLComopent,
     iconPLComponent
 } = require('./components')
 
@@ -62,20 +61,20 @@ module.exports = (data, options) => {
         `
     }
 
-    const progressBarRender = (currentKyu, userScore) => {
+    const progressBarRender = (currentKyu, userScore, color) => {
         const result = progressBar(currentKyu, userScore)
-        const barLenght = result.progressBarLenght
+        const barLength = result.progressBarLenght
         const percentage = result.progressPercentage
         return `
         <line 
-        fill="#ECB613" 
-        stroke="#ECB613" 
+        fill="${color}" 
+        stroke="${color}" 
         stroke-width="5"
         stroke-linecap="round"
         stroke-miterlimit="10" 
         x1="0" 
         y1="39.5" 
-        x2="${result.progressBarLenght}" 
+        x2="${barLength}" 
         y2="39.5"
         />
         ${textRender(20.5002, 35.5, '#AAAAAA', 13, (percentage === 'master' ? `score: ${userScore}` : `${percentage}%`))}
@@ -126,6 +125,11 @@ module.exports = (data, options) => {
             viewBox="0 -30 400 180" 
             enable-background="new 0 -30 400 180" 
             xml:space="preserve">
+            <style>
+            #scale {
+                color: #AAAAAA
+            }
+            </style>
          
             ${background(color.bg)}
             ${foreground(color.fg)}
@@ -134,7 +138,7 @@ module.exports = (data, options) => {
             ${textRender(307.3206, 5, color.text, 12, honor)}
             ${logoRender(0, 0, color.text, honorIcon)}
             ${logoRender(0, -19.15, color.logo, logoBig)}
-            ${progressBarRender(ranks.overall.rank, ranks.overall.score)}
+            ${progressBarRender(ranks.overall.rank, ranks.overall.score, kyuColor)}
             ${challengeRender(codeChallenges.totalCompleted, codeChallenges.totalAuthored)}
             ${progLangRender(ranks)}
             </svg>

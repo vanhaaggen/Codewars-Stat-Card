@@ -1,3 +1,7 @@
+const svgIcons = require('../assets/svg/svgIcons')
+const simpleIcon = require('simple-icons');
+
+
 const getKyuColor = (color) => {
     switch (color) {
         case 'white':
@@ -7,7 +11,9 @@ const getKyuColor = (color) => {
         case 'blue':
             return '#0077EE';
         case 'purple':
-            return '#B500ED'
+            return '#B500ED';
+        case 'black':
+            return '#020202'
 
     }
 }
@@ -64,9 +70,19 @@ const progressBar = (currentKyu, userScore) => {
     }
 }
 
+function getIcon(iconName) {
+    if (!iconName) throw new Error('no logo name queried')
+
+    const icon = simpleIcon.get(iconName)
+
+    return icon !== undefined ? icon.path : svgIcons[iconName]
+}
+
+
 module.exports = {
     getKyuColor,
     findInObj,
     progressBar,
-    SCORE
+    SCORE,
+    getIcon
 }

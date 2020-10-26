@@ -1,5 +1,7 @@
-const { findInObj } = require('../../utils/index')
-const { fetchIcon } = require('../../utils/fetcher')
+const {
+    findInObj,
+    getIcon } = require('../../utils/index')
+
 
 const textRender = (x, y, fontColor, fontSize, data, fontStyle) => {
     const fntStyle = fontStyle || 'normal'
@@ -28,7 +30,13 @@ const kyuLevelRender = (x, y, rankColor, kyuColor, logo, data) => {
     const X_AXIS = 40.5002
     const Y_AXIS = 5.35
 
-    const bgColoring = rankColor === 'blue' ? '#C1C1C1' : '#141414'
+    let bgColoring
+
+    if (rankColor === 'blue' || rankColor === 'black') {
+        bgColoring = '#C1C1C1'
+    } else {
+        bgColoring = '#141414'
+    }
 
     return `
     <g id="header" transform="matrix(1 0 0 1 ${x} ${y})">
@@ -53,8 +61,8 @@ const nameRender = (x, y, name, username, textColor, options) => {
     if (name !== null && !hasNameOnly && !hasAliasOnly || name !== null && hasNameOnly && hasAliasOnly) {
         return [
             textRender(x, y, textColor, 20, name),
-            textRender(x, (y + 12.80), '#918A8A', 12, 'alias', 'italic'),
-            textRender((x + 28), (y + 12.80), textColor, 12, username, 'italic')
+            textRender(x, (y + 13), '#918A8A', 12, 'alias', 'italic'),
+            textRender((x + 28), (y + 13), textColor, 12, username, 'italic')
         ]
 
     } else if (name !== null && hasNameOnly) {
@@ -70,18 +78,19 @@ const nameRender = (x, y, name, username, textColor, options) => {
 
 const iconPLComponent = (dataObj, color1, color2) => {
     const { languages } = dataObj
-    const language = Object.keys(languages)
+    const language = Object.keys(languages).splice(0, 3)
     let x = 18
 
     let components = []
 
     for (let i = 0; i < language.length; i++) {
-        const icon = fetchIcon(language[i])
+        const icon = getIcon(language[i])
         let component = `
         <g transform="matrix(1 0 0 1 ${x} 114)">
         <path
+        id="scale"
         fill="${color1}"
-        d="${icon.path}"
+        d="${icon}"
         />
         <g transform="matrix(1 0 0 1 28 8.5)">
             ${textRender(0, 0, color2, 10, 'score:')}

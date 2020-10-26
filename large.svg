@@ -6,11 +6,11 @@
 <!-- <g id="card">
 	<rect x="0" y="-30" fill="#303133" width="400" height="180"/>
 </g> -->
-<g id="progressBar">
+<!-- <g id="progressBar">
 	<line fill="#ECB613" stroke="#ECB613" stroke-width="13" stroke-miterlimit="10" x1="0" y1="39.5" x2="134.334" y2="39.5"/>
 	<text transform="matrix(1 0 0 1 20.5002 43.5)" fill="#AAAAAA" font-family="'MyriadPro-Semibold'" font-size="13">21.6%</text>
-</g>
-<g id="header">
+</g> -->
+<!-- <g id="header">
 	<text transform="matrix(1 0 0 1 96.3328 7)" fill="#E8E8E8" font-family="'ArialMT'" font-size="20">Christian Haag</text>
 	<polygon fill="#1D1D1F" points="302.992,-19 297.25,-19 291.008,-19 285.016,0.624 291.008,20.25 296.11,20.25 302.992,20.25 
 		400,20.25 400,-19 	"/>
@@ -64,8 +64,8 @@
 	<text transform="matrix(1 0 0 1 307.3206 5)" fill="#AAAAAA" font-family="'ArialMT'" font-size="12">135</text>
 	<polygon fill="#141414" stroke="#ECB613" stroke-miterlimit="10" points="83.891,1.001 77.668,-9.777 66.167,-9.777 65.223,-9.777 
 		33.501,-9.777 32.917,-9.777 21.056,-9.777 14.833,1.001 21.056,11.778 32.917,11.778 33.501,11.778 66.167,11.778 66.167,11.777 
-		77.668,11.777 	"/>
-	<text transform="matrix(1 0 0 1 40.7854 5.8535)" fill="#ECB613" font-family="'ArialMT'" font-size="14">6 kyu</text>
+		77.668,11.777 	"/> -->
+	<!-- <text transform="matrix(1 0 0 1 40.7854 5.8535)" fill="#ECB613" font-family="'ArialMT'" font-size="14">6 kyu</text>
 	<path fill="#ECB613" d="M30.699-6.042h-8.133L18.5,1.001l4.066,7.042h8.133l4.066-7.042L30.699-6.042z M30.101-3.044
 		c0.102,0.234,0.297,0.477,0.608,0.372l0.672,0.596l0.179,0.79l-0.102,0.081c-0.448-0.292-1.016,0.033-1.45-0.348
 		c-0.033-0.029-0.098-0.038-0.146-0.03c-0.433,0.066-0.889,0.075-1.294,0.221c-0.766,0.275-1.467,0.681-1.955,1.468
@@ -99,13 +99,13 @@
 	<path fill="#AAAAAA" d="M301.301-3.7h-6.89v0.861l2.502,1.878c-1.581,0.521-2.441,2.227-1.922,3.807
 		c0.522,1.581,2.219,2.442,3.808,1.921c1.58-0.521,2.442-2.222,1.921-3.807c-0.302-0.909-1.012-1.624-1.921-1.92l2.502-1.878V-3.7
 		 M299.122,3.837l-1.267-0.741l-1.265,0.741l0.335-1.434l-1.115-0.965l1.469-0.125l0.576-1.353l0.578,1.353l1.469,0.125
-		l-1.116,0.965L299.122,3.837z"/>
-</g>
+		l-1.116,0.965L299.122,3.837z"/> -->
+<!-- </g>
 <g id="challenges">
 	<text transform="matrix(1 0 0 1 201.5002 84.7822)"><tspan x="0" y="0" fill="#E8E8E8" font-family="'MyriadPro-Bold'" font-size="14">Total authored:</tspan><tspan x="97.257" y="0" fill="#E8E8E8" font-family="'MyriadPro-Regular'" font-size="14">  1555,</tspan></text>
 	<text transform="matrix(1 0 0 1 15.5002 84.7822)"><tspan x="0" y="0" fill="#E8E8E8" font-family="'MyriadPro-Regular'" font-size="14"> </tspan><tspan x="3.01" y="0" fill="#E8E8E8" font-family="'MyriadPro-Bold'" font-size="14">Total completed:</tspan><tspan x="109.198" y="0" fill="#E8E8E8" font-family="'MyriadPro-Regular'" font-size="14"> 155555</tspan></text>
 	<text transform="matrix(1 0 0 1 17.5002 66.5)" fill="#AAAAAA" font-family="'MyriadPro-Regular'" font-size="12">Challenges:</text>
-</g>
+</g> -->
 <g id="top3">
 	<text transform="matrix(1 0 0 1 18.5002 103.5)" fill="#AAAAAA" font-family="'MyriadPro-Regular'" font-size="12">Top 3 languages:</text>
 	<g id="Capa_6">

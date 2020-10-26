@@ -9,11 +9,11 @@ const DEV = {
     leaderboardPosition: 231907,
     skills: ['javascript'],
     ranks: {
-        overall: { rank: -6, name: '6 dan', color: 'yellow', score: 149 },
+        overall: { rank: -6, name: '6 kyu', color: 'yellow', score: 149 },
         languages: {
-            javascript: { score: 17856 },
-            ruby: { score: 17856 },
-            typescript: { score: 17856 }
+            lua: { score: 17856 },
+            cfml: { score: 17856 },
+            crystal: { score: 17856 }
         }
     },
     codeChallenges: {
@@ -33,8 +33,8 @@ module.exports = async (req, res, next) => {
     } else {
 
         try {
-            //const data = await fetchUser(queries.username)//---> Commented out for developement
-            res.send(renderSVG(DEV, queries))
+            const data = await fetchUser(queries.username)//---> Commented out for developement
+            res.send(renderSVG(data, queries))
 
         } catch (error) {
             next(error)
