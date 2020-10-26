@@ -1,3 +1,8 @@
+/*I took the following icons from  https://github.com/file-icons/icons
+[agda, brainfuck, coldFusion, cobol, coq, cpp, commonlisp, fortran, idris, lean, nasm]
+ */
+
+
 module.exports = {
 	agda: `M20.064,2.602l-7.787,7.787c-0.351,0.316-0.807-0.159-0.496-0.496l7.787-7.787C19.9,1.79,20.384,2.251,20.064,2.602z
     M23.463,4.053l-3.895,3.894c-0.316,0.349,0.163,0.811,0.496,0.496l3.894-3.894C24.271,4.192,23.791,3.736,23.463,4.053z
