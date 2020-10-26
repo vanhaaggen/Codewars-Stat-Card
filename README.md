@@ -1,5 +1,5 @@
 # Codewars Stat Badge/Card (WiP) 
-This is not the original Codewars Badge, just a redesign.
+This is not the original Codewars Badge, just a redesign I made for fun. Any suggestions are welcome 😊
 
 ⚠ The app is deployed on Heroku and it has a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform. 
 
