@@ -47,7 +47,11 @@ module.exports = (data, options) => {
     const background = (fill) => {
         return `
             <g id="card">
-            <rect x="0" y="-30" fill="${fill}" width="400" height="180"/>
+            <rect 
+            x="0" y="-30" 
+            width="400" height="180" 
+            rx="3" ry="3"
+            fill="${fill}" />
             </g>
        `
     }
