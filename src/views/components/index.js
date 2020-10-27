@@ -88,7 +88,6 @@ const iconPLComponent = (dataObj, color1, color2) => {
         let component = `
         <g transform="matrix(1 0 0 1 ${x} 114)">
         <path
-        id="scale"
         fill="${color1}"
         d="${icon}"
         />

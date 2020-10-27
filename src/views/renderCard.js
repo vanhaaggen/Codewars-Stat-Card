@@ -129,11 +129,7 @@ module.exports = (data, options) => {
             viewBox="0 -30 400 180" 
             enable-background="new 0 -30 400 180" 
             xml:space="preserve">
-            <style>
-            #scale {
-                color: #AAAAAA
-            }
-            </style>
+           
          
             ${background(color.bg)}
             ${foreground(color.fg)}
