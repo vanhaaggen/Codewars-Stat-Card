@@ -27,7 +27,7 @@ module.exports = async (req, res, next) => {
     console.log(req.body)
 
     res.setHeader("Content-Type", "image/svg+xml")
-    res.header('Cache-Control', 'no-cache');
+    res.header('Cache-Control', 'no-store');
 
 
     if (Object.keys(queries).length === 0) {
