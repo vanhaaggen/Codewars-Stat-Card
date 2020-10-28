@@ -27,7 +27,16 @@ const findInObj = (obj, string) => {
     }
 }
 
+function clampValue(number, min, max) {
+    return Math.max(min, Math.min(number, max));
+}
 
+const CONSTANTS = {
+    THIRTY_MINUTES: 1800,
+    TWO_HOURS: 7200,
+    FOUR_HOURS: 14400,
+    ONE_DAY: 86400,
+}
 
 const SCORE = new Map()
 SCORE.set(-8, 0)
@@ -84,5 +93,7 @@ module.exports = {
     findInObj,
     progressBar,
     SCORE,
+    CONSTANTS,
+    clampValue,
     getIcon
 }

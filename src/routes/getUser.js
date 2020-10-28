@@ -26,10 +26,9 @@ module.exports = async (req, res, next) => {
     const queries = req.query
     console.log(req.body)
 
-    res.set("Content-Type", "image/svg+xml")
-    res.header('Cache-Control', 'no-cache,max-age=0,no-store,s-maxage=0,proxy-revalidate');
-    res.header('Pragma', 'no-cache');
-    res.header('Expires', '-1');
+    res.setHeader("Content-Type", "image/svg+xml")
+    res.header('Cache-Control', 'no-cache');
+
 
     if (Object.keys(queries).length === 0) {
         res.send('Not founddddd')
