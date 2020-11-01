@@ -3,7 +3,7 @@ This is not the original Codewars Badge, just a redesign I made for fun. Any sug
 
 
 ### Good to know
-1. ⚠ This app is deployed on ![Heroku][1] and it has a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform.
+1. ⚠ This app is deployed on Heroku and it has a limit of 50 concurrent conections so, If you like it please 🙏 clone the repo and deploy it on your favourite platform.
 
 2. ![Heroku][1] + ☕. This app is [kaffeinated](https://kaffeine.herokuapp.com/).It pings every 30 minutes to keep the dyno awake. Due to Heroku's policies for free dynos to sleep for 6 hours a day, I've set mine to fall asleep😴 from 1:00am to 7:00am GMT.
 
