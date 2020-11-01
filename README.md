@@ -72,7 +72,7 @@ The URL always has to contain either the `&card` or the `&badge`query.
 
 - [x] If name return null, display username in big.
 
-- [x] Make color design fully customizable.
+- [x] Make colors customizable.
 
 - [x] Create codewars stat Card with more user info.
 
