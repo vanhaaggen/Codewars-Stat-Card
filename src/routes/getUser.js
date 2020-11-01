@@ -24,7 +24,7 @@ const DEV = {
 
 module.exports = async (req, res, next) => {
     const queries = req.query
-    console.log(req.body)
+    console.log(queries)
 
     res.setHeader("Content-Type", "image/svg+xml")
     res.header('Cache-Control', 'no-store');
@@ -35,8 +35,8 @@ module.exports = async (req, res, next) => {
     } else {
 
         try {
-            const data = await fetchUser(queries.username)//---> Commented out for developement
-            res.send(renderSVG(data, queries))
+            //const data = await fetchUser(queries.username)//---> Commented out for developement
+            res.send(renderSVG(DEV, queries))
 
         } catch (error) {
             next(error)

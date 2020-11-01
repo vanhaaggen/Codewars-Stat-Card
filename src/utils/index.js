@@ -18,6 +18,30 @@ const getKyuColor = (color) => {
     }
 }
 
+const getColors = (mode) => {
+
+    switch (mode) {
+        case 'bright_mode':
+            return {
+                bg: '#f5f5f5',
+                fg: '#b3b3b3',
+                stroke: '#b3b3b3',
+                text: '#303133',
+                secTxt: '#AAAAAA',
+                logo: '#f5f5f5'
+            }
+        case 'dark_mode':
+            return {
+                bg: '#303133',
+                fg: '#1D1D1F',
+                stroke: '#020202',
+                text: '#E8E8E8',
+                secTxt: '#AAAAAA',
+                logo: '#B92F21'
+            }
+    }
+}
+
 const findInObj = (obj, string) => {
     const hasInObj = Object.keys(obj).findIndex(key => key === string)
     if (hasInObj !== -1) {
@@ -27,16 +51,26 @@ const findInObj = (obj, string) => {
     }
 }
 
-function clampValue(number, min, max) {
-    return Math.max(min, Math.min(number, max));
+const parseCustomColor = (string) => {
+    let def = {
+        bg: '#303133',
+        fg: '#1D1D1F',
+        stroke: '#020202',
+        text: '#E8E8E8',
+        secTxt: '#AAAAAA',
+        logo: '#B92F21'
+    }
+
+    const queries = string.split('_')
+    const keys = queries.map(key => key.split(':'))
+
+    keys.forEach(key => {
+        Object.keys(def).findIndex(val => val === key[0]) >= 0 ? def[key[0]] = `#${key[1]}` : ''
+    })
+
+    return def
 }
 
-const CONSTANTS = {
-    THIRTY_MINUTES: 1800,
-    TWO_HOURS: 7200,
-    FOUR_HOURS: 14400,
-    ONE_DAY: 86400,
-}
 
 const SCORE = new Map()
 SCORE.set(-8, 0)
@@ -90,10 +124,10 @@ function getIcon(iconName) {
 
 module.exports = {
     getKyuColor,
+    getColors,
     findInObj,
     progressBar,
     SCORE,
-    CONSTANTS,
-    clampValue,
-    getIcon
+    getIcon,
+    parseCustomColor
 }

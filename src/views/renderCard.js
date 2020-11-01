@@ -9,7 +9,8 @@ const {
 
 const {
     getKyuColor,
-    findInObj,
+    getColors,
+    parseCustomColor,
     progressBar
 } = require('../utils')
 
@@ -33,16 +34,17 @@ module.exports = (data, options) => {
         codeChallenges
     } = data
 
-    const isBrightMode = findInObj(options, 'bright_mode')
+    const {
+        colormode,
+        customcolor
+    } = options
 
-    const color = {
-        bg: isBrightMode ? '#f5f5f5' : '#303133',
-        fg: isBrightMode ? '#b3b3b3' : '#1D1D1F',
-        stroke: isBrightMode ? '#b3b3b3' : '#020202',
-        text: isBrightMode ? '#303133' : '#E8E8E8',
-        secondaryTxt: '#AAAAAA',
-        logo: isBrightMode ? '#f5f5f5' : '#B92F21'
-    }
+    const colorMode = colormode
+
+
+    let color = customcolor ? parseCustomColor(customcolor) : getColors(colorMode)
+
+
 
     const background = (fill) => {
         return `
@@ -90,7 +92,7 @@ module.exports = (data, options) => {
         const TEXT_B = 'Total authored:'
         return `
         <g id="challenges">
-        ${textRender(17.5002, 66.5, color.secondaryTxt, 12, 'Challenges:')}
+        ${textRender(17.5002, 66.5, color.secTxt, 12, 'Challenges:')}
         ${textRender(15.5002, 84.7822, color.text, 14,
             `<tspan x="3.01" y="0">${TEXT_A}</tspan>
             <tspan x="115.198" y="0"> ${challengeCompleted}</tspan>`
@@ -107,8 +109,8 @@ module.exports = (data, options) => {
 
     const progLangRender = (dataObj) => {
         return `
-            ${textRender(18.5002, 105.5, color.secondaryTxt, 12, 'Top 3 languages:')}
-            ${iconPLComponent(dataObj, color.text, color.secondaryTxt)}
+            ${textRender(18.5002, 105.5, color.secTxt, 12, 'Top 3 languages:')}
+            ${iconPLComponent(dataObj, color.text, color.secTxt)}
      
         `
     }

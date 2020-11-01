@@ -5,7 +5,9 @@ const {
 
 const {
     getKyuColor,
-    findInObj
+    findInObj,
+    getColors,
+    parseCustomColor,
 } = require('../utils')
 
 const {
@@ -23,15 +25,15 @@ module.exports = (data, options) => {
         ranks,
     } = data
 
-    const isBrightMode = findInObj(options, 'bright_mode')
+    const {
+        colormode,
+        customcolor
+    } = options
 
-    const color = {
-        bg: isBrightMode ? '#f5f5f5' : '#303133',
-        fg: isBrightMode ? '#b3b3b3' : '#1D1D1F',
-        stroke: isBrightMode ? '#b3b3b3' : '#020202',
-        text: isBrightMode ? '#303133' : '#E8E8E8',
-        logo: isBrightMode ? '#f5f5f5' : '#B92F21'
-    }
+    const colorMode = colormode
+
+
+    let color = customcolor ? parseCustomColor(customcolor) : getColors(colorMode)
 
 
     const backgroundRender = () => {
