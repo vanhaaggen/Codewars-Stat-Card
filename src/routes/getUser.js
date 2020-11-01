@@ -35,8 +35,8 @@ module.exports = async (req, res, next) => {
     } else {
 
         try {
-            //const data = await fetchUser(queries.username)//---> Commented out for developement
-            res.send(renderSVG(DEV, queries))
+            const data = await fetchUser(queries.username)//---> Commented out for developement
+            res.send(renderSVG(data, queries))
 
         } catch (error) {
             next(error)
