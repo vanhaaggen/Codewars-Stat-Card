@@ -1,5 +1,5 @@
 # Codewars Stat Badge/Card (WiP) 
-This is not the original Codewars Badge, just a redesign I made for fun. Any suggestions are welcome 😊
+This is not the original Codewars Badge, just a redesign I made for fun. 
 
 
 ### Good to know
@@ -71,6 +71,10 @@ The URL has to contain the following queries to function properly:
   ![](./svg/customCard.svg)
  
 --- 
+> Any suggestions or contributions are very welcome 😊
+> - For suggestions please open a new Issue
+> - For contributions Pull-request
+
 ## things to do:
 - [x] Choose to display username. Default is both name and username.
 
