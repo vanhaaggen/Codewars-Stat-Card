@@ -14,15 +14,18 @@ This is not the original Codewars Badge, just a redesign I made for fun. Any sug
 
 ## Options 
 
-The URL always has to contain either the `&card` or the `&badge`query.
+The URL has to contain the following queries to function properly:
+- **username=**[your codewars username]
+- **card** or **badge** (without value, just the key)
+- **colormode=**[dark_mode or bright_mode]
 
 - ### Default mode 
-   `https://github-readme-codewars-stats.herokuapp.com/api/?username=[your username]&badge`
+   `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&badge&colormode=dark_mode`
  
     ![](./svg/defaultBadge.svg)
  
 - ### bright_mode
-   `https://github-readme-codewars-stats.herokuapp.com/api/?username=[your username]&badge&bright_mode`
+   `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&badge&colormode=bright_mode`
  
     ![](./svg/badgeBrightMode.svg)
 
@@ -32,12 +35,12 @@ The URL always has to contain either the `&card` or the `&badge`query.
     ![](./svg/badgeNameOnly.svg)
 
 - ### alias_only (combined with bright_mode)
-  `https://github-readme-codewars-stats.herokuapp.com/api/?username=[your username]&badge&alias_only&bright_mode`
+  `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&badge&alias_only&colormode=bright_mode`
 
     ![](./svg/badgeCombinedOptions.svg)
  
- - ### Card default mode
-   `https://github-readme-codewars-stats.herokuapp.com/api/?username=[your username]&card`
+ - ### Card 
+   `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&card&colormode=dark_mode`
    
    ![](./svg/svgCard.svg)
 ---
