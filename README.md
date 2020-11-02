@@ -19,27 +19,28 @@ The URL has to contain the following queries to function properly:
 - **card** or **badge** (without value, just the key)
 - **colormode=**[dark_mode or bright_mode]
 
-- ### Default mode 
+## Examples
+- #### ***Default mode*** 
    `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&badge&colormode=dark_mode`
  
     ![](./svg/defaultBadge.svg)
  
-- ### bright_mode
+- #### ***bright_mode***
    `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&badge&colormode=bright_mode`
  
     ![](./svg/badgeBrightMode.svg)
 
-- ### name_only
+- #### ***name_only***
   `https://github-readme-codewars-stats.herokuapp.com/api/?username=[your username]&badge&name_only`
 
     ![](./svg/badgeNameOnly.svg)
 
-- ### alias_only (combined with bright_mode)
+- #### ***alias_only*** (combined with bright_mode)
   `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&badge&alias_only&colormode=bright_mode`
 
     ![](./svg/badgeCombinedOptions.svg)
  
- - ### Card 
+ - #### ***Card*** 
    `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&card&colormode=dark_mode`
    
    ![](./svg/svgCard.svg)
@@ -58,7 +59,7 @@ The URL has to contain the following queries to function properly:
   The query string is formated the following way:
   `customcolor=bg:[HEX code without #]`
   
-  To join different options just:
+  To join different options use underscore _:
   `customcolor=bg:[HEX code without #]_fg:[HEX code]_text:[HEX code]`
   
   ### Example Badge
