@@ -5,7 +5,6 @@ const {
 
 const {
     getKyuColor,
-    findInObj,
     getColors,
     parseCustomColor,
 } = require('../utils')
@@ -32,9 +31,7 @@ module.exports = (data, options) => {
 
     const colorMode = colormode
 
-
     let color = customcolor ? parseCustomColor(customcolor) : getColors(colorMode)
-
 
     const backgroundRender = () => {
         return `
@@ -70,16 +67,12 @@ module.exports = (data, options) => {
         xml:space="preserve"> 
       
         ${backgroundRender()}
-
         ${foregroundRender()}
-
         ${logoRender(0, 0, color.logo, logoBig)}
-       
         ${kyuLevelRender(0, 19.20, rankColor, kyuColor, logoRender(0, 0, kyuColor, logoSmall), ranks.overall.name)}
-        
         ${nameRender(100.5002, 20.5002, name, username, color.text, options)}
-        
         ${textRender(310.3206, 25, color.text, 13, honor)}
+        
         </svg>
         `
     }

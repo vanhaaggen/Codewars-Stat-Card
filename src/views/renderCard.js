@@ -5,8 +5,6 @@ const {
     logo
 } = require('../assets/svg/cw_logo')
 
-
-
 const {
     getKyuColor,
     getColors,
@@ -41,10 +39,7 @@ module.exports = (data, options) => {
 
     const colorMode = colormode
 
-
     let color = customcolor ? parseCustomColor(customcolor) : getColors(colorMode)
-
-
 
     const background = (fill) => {
         return `
@@ -132,7 +127,6 @@ module.exports = (data, options) => {
             enable-background="new 0 -30 400 180" 
             xml:space="preserve">
            
-         
             ${background(color.bg)}
             ${foreground(color.fg)}
             ${kyuLevelRender(0, -1, rankColor, kyuColor, logoRender(0, 0, kyuColor, logoSmall), ranks.overall.name)}

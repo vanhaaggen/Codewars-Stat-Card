@@ -2,7 +2,7 @@ const {
     findInObj,
     getIcon } = require('../../utils/index')
 
-
+/** Returns SVG text element*/
 const textRender = (x, y, fontColor, fontSize, data, fontStyle) => {
     const fntStyle = fontStyle || 'normal'
 
@@ -15,7 +15,7 @@ const textRender = (x, y, fontColor, fontSize, data, fontStyle) => {
         >${data}</text>
         `
 }
-
+/**Returns svg path component */
 const logoRender = (x, y, colorArg, pathArg) => {
     return `
     <g transform="matrix(1 0 0 1 ${x} ${y})">
@@ -25,7 +25,7 @@ const logoRender = (x, y, colorArg, pathArg) => {
     </g>
     `
 }
-
+/**Returns svg kyuLevel component. It is composed by: poligon form, kyu level and logo */
 const kyuLevelRender = (x, y, rankColor, kyuColor, logo, data) => {
     const X_AXIS = 40.5002
     const Y_AXIS = 5.35
@@ -53,7 +53,7 @@ const kyuLevelRender = (x, y, rankColor, kyuColor, logo, data) => {
     </g>
     `
 }
-
+/**Returns the user name depending on what display option is choosed: name_only || alias_only*/
 const nameRender = (x, y, name, username, textColor, options) => {
     const hasNameOnly = findInObj(options, 'name_only')
     const hasAliasOnly = findInObj(options, 'alias_only')
@@ -75,7 +75,7 @@ const nameRender = (x, y, name, username, textColor, options) => {
         return textRender(x, (y + 6.25), textColor, 20, username)
     }
 }
-
+/**Returns icon elements and create component formed by: icon, score: string, score: number */
 const iconPLComponent = (dataObj, color1, color2) => {
     const { languages } = dataObj
     const language = Object.keys(languages).splice(0, 3)

@@ -1,7 +1,11 @@
 const svgIcons = require('../assets/svg/svgIcons')
 const simpleIcon = require('simple-icons');
 
-
+/**
+ * Chooses HEX code by color name
+ * @param {String} color  
+ * @returns {String} HEX code strgin
+ */
 const getKyuColor = (color) => {
     switch (color) {
         case 'white':
@@ -14,12 +18,14 @@ const getKyuColor = (color) => {
             return '#B500ED';
         case 'black':
             return '#020202'
-
     }
 }
-
+/**
+ * Chooses between two style objects
+ * @param {string} mode
+ * @returns {Object} Object
+ */
 const getColors = (mode) => {
-
     switch (mode) {
         case 'bright_mode':
             return {
@@ -41,7 +47,12 @@ const getColors = (mode) => {
             }
     }
 }
-
+/**
+ * Search for strign in obj and returns a boolean.
+ * @param {Object} obj 
+ * @param {string} string
+ * @returns {Boolean} Boolean 
+ */
 const findInObj = (obj, string) => {
     const hasInObj = Object.keys(obj).findIndex(key => key === string)
     if (hasInObj !== -1) {
@@ -50,7 +61,11 @@ const findInObj = (obj, string) => {
         return false
     }
 }
-
+/**
+ * Parses a query string and returns a style object
+ * @param {string} string
+ * @returns {Object} Object 
+ */
 const parseCustomColor = (string) => {
     let def = {
         bg: '#303133',
@@ -71,7 +86,6 @@ const parseCustomColor = (string) => {
     return def
 }
 
-
 const SCORE = new Map()
 SCORE.set(-8, 0)
 SCORE.set(-7, 20)
@@ -83,8 +97,12 @@ SCORE.set(-2, 4829)
 SCORE.set(-1, 13147)
 SCORE.set(1, 35759)
 SCORE.set(2, 97225)
-
-
+/**
+ * Calculates the % and the length of the progress bar.
+ * @param {string} currentKyu 
+ * @param {number} userScore
+ * @returns {object} Object 
+ */
 const progressBar = (currentKyu, userScore) => {
     const MAX_BAR_LENGHT = 400
     const isNegative = Math.sign(currentKyu) === -1 ? true : false
@@ -112,7 +130,11 @@ const progressBar = (currentKyu, userScore) => {
         progressBarLenght
     }
 }
-
+/**
+ * Searches for icons
+ * @param {string} iconName 
+ * @returns {string} SVG path string
+ */
 function getIcon(iconName) {
     if (!iconName) throw new Error('no logo name queried')
 
