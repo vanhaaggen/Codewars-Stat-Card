@@ -49,8 +49,8 @@ The URL has to contain the following queries to function properly:
  
 `https://github-readme-codewars-stats.herokuapp.com/api/?username=vanhaaggen&[badge or card]&customcolor=[query-string]`
   The query options are:
-  - bg
-  - fg
+  - bg (background)
+  - fg (foreground)
   - text
   - secText (secondary text)
   - stroke (only in badge)
