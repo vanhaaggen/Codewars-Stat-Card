@@ -4,6 +4,9 @@ This app is currently out of service. Heroku changed to a payment only platform 
 # Codewars Stat Badge/Card (WiP) 
 This is not the original Codewars Badge, just a redesign I made for fun. 
 
+## Good to know
+The app is hosted on Renders free tier making it fall asleep after 15 min fo inactivity. Each time the app is pinged it takes a lot to start. To avoid this you can aopen an account on [cron-job.com](https://console.cron-job.org) and set a cron-job to ping the app every 10 min.
+
 ## Options 
 
 The URL has to contain the following queries to function properly:
