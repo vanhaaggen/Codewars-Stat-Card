@@ -1,11 +1,12 @@
 ## ⚠ Disclaimer ⚠
-This app is currently out of service. Heroku changed to a payment only platform and got rid of all free dynos. Sorry for the inconveniences.
------
+If you like this app support me by staring the repo ⭐ or fork it and host it on your own hosting platform. [Render](https://render.com/) is a good alternative if you where affected by Heroku shutting down free dynos.
+---
+
 # Codewars Stat Badge/Card (WiP) 
 This is not the original Codewars Badge, just a redesign I made for fun. 
 
 ## Good to know
-The app is hosted on Renders free tier making it fall asleep after 15 min fo inactivity. Each time the app is pinged it takes a lot to start. To avoid this you can aopen an account on [cron-job.com](https://console.cron-job.org) and set a cron-job to ping the app every 10 min.
+The app is hosted on Renders free tier, which is limited, making it fall asleep after 15 min of inactivity. Each time the app is pinged it takes a lot to start. To avoid this, you could open an account on [cron-job.com](https://console.cron-job.org) and set a cron-job to ping the app every 10 min.
 
 ## Options 
 
